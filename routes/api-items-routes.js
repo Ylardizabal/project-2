@@ -32,11 +32,12 @@ module.exports = function(app) {
       brand: req.body.brand,
       planner: req.body.planner,
       favorites: req.body.favorites,
-      timestamps: req.body.timestamps
+      timestamps: req.body.timestamps,
+      image_url: reg.body.image_url
     }).then(function(results) {
       // `results` here would be the newly created items
       res.json(dbItems)
-      res.end();
+      // res.end();
     });
 
   });

@@ -1,12 +1,14 @@
 {
   "name": "project-2",
   "version": "1.0.0",
-  "description": "",
+  "description": "Project 2",
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "mysql2": "^1.4.2",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
     "sequelize": "^4.22.6"
   },
   "devDependencies": {},
@@ -15,5 +17,13 @@
     "start": "node server.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ylardizabal/project-2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Ylardizabal/project-2/issues"
+  },
+  "homepage": "https://github.com/Ylardizabal/project-2#readme"
 }

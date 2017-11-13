@@ -56,7 +56,7 @@ var Items = sequelize.define("Items", {
    favorites:  {
     type: DataTypes.BOOLEAN,
   }, 
- Image:  {
+ image_url:  {
     type: DataTypes.STRING,
     allowNull: false;
   }, 
