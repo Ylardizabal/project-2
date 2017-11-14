@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>My Armoire</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Clicker+Script" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=GFS+Neohellenic" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet">
+
+</head>
+
+<style>
+body{
+  background-color: #d60072;
+  background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+</style>
+
+
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+      <a class="navbar-brand" href="/logout">
+        Logout
+      </a>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h2><span class="member-name"></span> Armoire</h2>       
+                <div class="row">
+                 <form action="http://localhost:8080/" method="POST" enctype="multipart/form-data">
+                  <!-- <div class="col-md-6">
+                      <input type="file" name="file" size="50" />
+                  </div>
+                  </br>
+                  
+                 </form>
+                 </div>     
+          <form class="signup">
+          <div class="checkers">
+           
+
+        <label for="color">What color is this item? (field required):</label>
+            <input type="color" class="form-control" id="color-input" placeholder="">
+            <p>Add tags to your item:</p>
+        <p><input name="Categories" type="checkbox" id="checkBtn" value="1" required><label>Top</label></p>
+        <p><input name="Categories" type="checkbox" id="checkBtn" value="2"><label>Bottom</label></p>
+       <p><input name="Categories" type="checkbox" id="checkBtn" value="3"><label>Dress</label></p>
+      <p><input name="Categories" type="checkbox" id="checkBtn" value="4"><label>Socks</label></p>
+      <p><input name="Categories" type="checkbox" id="checkBtn" value="5"><label>Shoes</label></p>
+      <p><input name="Categories" type="checkbox" id="checkBtn" value="6"><label>Accessories</label></p>
+      <p><input name="Categories" type="checkbox" id="checkBtn" value="7"><label>Planner</label></p>
+      <p><input name="Categories" type="checkbox" id="checkBtn" value="8"><label>Favorites</label></p>
+      
+            </div>
+          
+           
+          <div style="display: none" id="alert" class="alert alert-danger" role="alert">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span> <span class="msg"></span>
+          </div>
+              <input type="submit" value="Upload File" />
+          </div>
+        </form>
+        <br />
+        </div>
+    </div>
+  </div> -->
+
+  <button id="myBtn">Add to your Armoire!</button>
+  
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+  
+    <!-- Modal content -->
+    
+<form class="signup">
+<div class="checkers">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <<div class="col-md-6">
+            <input type="file" name="file" size="50" />
+        </div>
+        
+        
+
+<p>What color is your item?</p>
+<input type="color" class="col-md-3" id="color-input" placeholder="">
+<br>
+<p>Add tags to your item:</p>
+<p><input name="Categories" type="checkbox" id="checkBtn" value="1" required><label>Top</label></p>
+<p><input name="Categories" type="checkbox" id="checkBtn" value="2"><label>Bottom</label></p>
+<p><input name="Categories" type="checkbox" id="checkBtn" value="3"><label>Dress</label></p>
+<p><input name="Categories" type="checkbox" id="checkBtn" value="4"><label>Socks</label></p>
+<p><input name="Categories" type="checkbox" id="checkBtn" value="5"><label>Shoes</label></p>
+<p><input name="Categories" type="checkbox" id="checkBtn" value="6"><label>Accessories</label></p>
+<p><input name="Categories" type="checkbox" id="checkBtn" value="7"><label>Planner</label></p>
+<p><input name="Categories" type="checkbox" id="checkBtn" value="8"><label>Favorites</label></p>
+
+</div>
+
+
+<div style="display: none" id="alert" class="alert alert-danger" role="alert">
+<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+<span class="sr-only">Error:</span> <span class="msg"></span>
+</div>
+  <input type="submit" value="Upload File" />
+</div>
+</form>
+<br />
+</div>
+</div>
+</div>
+    </div>
+  
+  </div>
+
+</form>
+</div>   
+  <script>
+      // Get the modal
+      var modal = document.getElementById('myModal');
+      
+      // Get the button that opens the modal
+      var btn = document.getElementById("myBtn");
+      
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+      
+      // When the user clicks the button, open the modal 
+      btn.onclick = function() {
+          modal.style.display = "block";
+      }
+      
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+          modal.style.display = "none";
+      }
+      
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+          if (event.target == modal) {
+              modal.style.display = "none";
+          }
+      }
+      </script>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/categories.js"></script>
+</body>
+</html>
+
