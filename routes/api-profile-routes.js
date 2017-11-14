@@ -24,7 +24,7 @@ module.exports = function(app) {
       birthday: req.body.birthday,
       gender: req.body.gender,
       username: req.body.username,
-      password: req.body.password
+      password: req.body.password,
       confirm_password: req.body.confirm_password
       
     }).then(function(results) {
