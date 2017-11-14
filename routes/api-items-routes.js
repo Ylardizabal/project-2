@@ -19,7 +19,7 @@ module.exports = function(app) {
     console.log("New Item");
     console.log(req.body);
 
-    Items.create({
+    db.Items.create({
       top: req.body.top,
       bottom: req.body.bottom,
       dress: req.body.dress,
@@ -34,7 +34,7 @@ module.exports = function(app) {
       favorites: req.body.favorites,
       timestamps: req.body.timestamps,
       image_url: reg.body.image_url
-    }).then(function(results) {
+    }).then(function(dbItems) {
       // `results` here would be the newly created items
       res.json(dbItems)
       // res.end();

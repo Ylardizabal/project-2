@@ -29,6 +29,7 @@ app.use(express.static("public"));
 require("./routes/api-profile-routes.js")(app);
 require("./routes/api-items-routes.js")(app);
 require("./routes/api-wishlist-routes.js")(app);
+require("./routes/html-routes.js")(app);
 
 
 // Syncing our sequelize models and then starting our Express app

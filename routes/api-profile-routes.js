@@ -16,7 +16,7 @@ module.exports = function(app) {
   // Add an item
   app.post("/api/new", function(req, res) {
 
-    console.log("New Item");
+    console.log("New Profile");
     console.log(req.body);
 
     Profile.create({
@@ -37,7 +37,7 @@ module.exports = function(app) {
 
 
   // DELETE route for deleting items
-  app.delete("/api/items/:id", function(req, res) {
+  app.delete("/api/profile/:id", function(req, res) {
     db.Profile.destroy({
       where: {
         id: req.params.id

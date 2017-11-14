@@ -13,27 +13,35 @@ var db = require("../models");
 module.exports = function(app) {
 
   // GET route for getting all of the items
-  app.get("/api/items/", function(req, res) {
-    db.Items.findAll({})
-    .then(function(dbItems) {
-      res.json(dbItems);
-    });
-  });
 
-  // Get route for returning posts of a specific category
-  app.get("/api/items/category/:category", function(req, res) {
+  app.get("/api/items", function(req, res) {
+    var query = {};
+    if (req.query.profile.id) {
+      query.ProfileId = req.query.profile.id;
+    }
     db.items.findAll({
-      where: {
-        category: req.params.category
-      }
-    })
-    .then(function(dbItems) {
+      where: query
+    }).then(function(dbItems) {
       res.json(dbItems);
     });
   });
 
-  // Get route for retrieving a single post
-  app.get("/api/Items/:id", function(req, res) {
+
+  // Get route for returning posts of a specific item type
+ app.get("/api/items", function(req, res) {
+    var query = {};
+    if (req.query.items.*) {
+      query.ProfileId = req.query.items.*;
+    }
+    db.items.findAll({
+      where: query
+    }).then(function(dbItems) {
+      res.json(dbItems);
+    });
+  });
+
+  // Get route for retrieving a single item
+  app.get("/api/items/:id", function(req, res) {
     db.Items.findOne({
       where: {
         id: req.params.id
