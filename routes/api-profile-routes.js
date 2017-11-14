@@ -25,7 +25,7 @@ module.exports = function(app) {
       gender: req.body.gender,
       username: req.body.username,
       password: req.body.password
-      // confirm_password: req.body.confirm_password
+      confirm_password: req.body.confirm_password
       
     }).then(function(results) {
       // `results` here would be the newly created items
