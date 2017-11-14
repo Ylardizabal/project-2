@@ -34,7 +34,7 @@ var Profile = sequelize.define("Profile", {
   confirm_password: {
     type: DataTypes.STRING,
     allowNull: false,
-    contains: password,
+    // contains: password,
         },
 }, {
   timestamps: true
@@ -53,8 +53,8 @@ var Profile = sequelize.define("Profile", {
       onDelete: "cascade"
     });
 
-    Profile.hasMany(model.Wishlist, {
-    });
+    // Profile.hasMany(model.Wishlist, {
+    // });
   };
 
   return Profile;

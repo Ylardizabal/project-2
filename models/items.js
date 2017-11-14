@@ -39,7 +39,7 @@ var Items = sequelize.define("Items", {
   
   color:  {
     type: DataTypes.STRING,
-    allowNull: false;
+    allowNull: false,
   },
   
   emotion:  {
@@ -58,7 +58,7 @@ var Items = sequelize.define("Items", {
   }, 
  image_url:  {
     type: DataTypes.STRING,
-    allowNull: false;
+    allowNull: false,
   }, 
 },{
   timestamps: true
