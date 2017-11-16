@@ -70,11 +70,11 @@ var Categories = sequelize.define("Categories", {
 // // Makes the Model available for other files (will also create a table)
 // module.exports = Items;
 
-  Categories.associate = function(models) {
+  // Categories.associate = function(models) {
     // Associating Profile with Items
     // When Profile is deleted, also delete any associated Items
   Categories.associate = function(models) {
-    .belongsTo(models.Profile, {
+    Categories.belongsTo(models.Profile, {
       foreignKey: {
         allowNull: false
       }
