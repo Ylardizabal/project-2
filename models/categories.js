@@ -10,52 +10,52 @@ module.exports = function(sequelize, DataTypes) {
 // Creates a  model that matches up with DB
 var Categories = sequelize.define("Categories", {
   top: {
-    type: DataTypes.STRING,
+    type: DataTypes.BOOLEAN,
   },
 
-  bottom:  {
-    type: DataTypes.STRING,
+ bottom:  {
+    type: DataTypes.BOOLEAN,
   },    
-  
-  dress:  {
-    type: DataTypes.STRING,
+ 
+ dress:  {
+    type: DataTypes.BOOLEAN,
   },
-         
+        
   socks:  {
-    type: DataTypes.STRING,
+    type: DataTypes.BOOLEAN,
   },
-       
+      
   shoes:  {
-    type: DataTypes.STRING,
+    type: DataTypes.BOOLEAN,
   },
   
-  accessories:  {
-    type: DataTypes.STRING,
+ accessories:  {
+    type: DataTypes.BOOLEAN,
   },  
-  
-  season:  {
+ 
+ season:  {
     type: DataTypes.STRING,
   },
   
-  color:  {
+ color:  {
     type: DataTypes.STRING,
     allowNull: false,
   },
   
-  emotion:  {
+ emotion:  {
     type: DataTypes.STRING,
   },
 
-  brand:  {
+ brand:  {
     type: DataTypes.STRING,
   },  
-  
-  planner:  {
+ 
+ planner:  {
     type: DataTypes.BOOLEAN,
-  }, 
+  },
    favorites:  {
     type: DataTypes.BOOLEAN,
-  }, 
+  },
  image_url:  {
     type: DataTypes.STRING,
     allowNull: false,
@@ -70,17 +70,16 @@ var Categories = sequelize.define("Categories", {
 // // Makes the Model available for other files (will also create a table)
 // module.exports = Items;
 
-  // Categories.associate = function(models) {
+ Categories.associate = function(models) {
     // Associating Profile with Items
     // When Profile is deleted, also delete any associated Items
-  Categories.associate = function(models) {
-    Categories.belongsTo(models.Profile, {
+    Categories.belongsTo(models.User, {
       foreignKey: {
         allowNull: false
       }
     });
   };
 
-  return Categories;
+ return Categories;
 
 };

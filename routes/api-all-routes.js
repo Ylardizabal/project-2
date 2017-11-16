@@ -28,20 +28,20 @@ module.exports = function(app) {
 
 
   // Get route for returning posts of a specific item type
- app.get("/api/Categories", function(req, res) {
+ app.get("/api/categories", function(req, res) {
     var query = {};
     if (req.query.Categories.*) {
-      query.ProfileId = req.query.Categories.*;
+      query.CategoriesId = req.query.Categories.*;
     }
     db.Categories.findAll({
       where: query
-    }).then(function(dbItems) {
+    }).then(function(dbCategories) {
       res.json(dbCategories);
     });
   });
 
   // Get route for retrieving a single item
-  app.get("/api/Categories/:id", function(req, res) {
+  app.get("/api/categories/:id", function(req, res) {
     db.Categories.findOne({
       where: {
         id: req.params.id
