@@ -5,7 +5,7 @@
 // Dependencies
 // =============================================================
 
-var Items = require("../models/items.js");
+var Categories = require("../models/categories.js");
 
 
 // Routes
@@ -19,7 +19,7 @@ module.exports = function(app) {
     console.log("New Item");
     console.log(req.body);
 
-    db.Items.create({
+    db.Categories.create({
       top: req.body.top,
       bottom: req.body.bottom,
       dress: req.body.dress,
@@ -34,9 +34,9 @@ module.exports = function(app) {
       favorites: req.body.favorites,
       timestamps: req.body.timestamps,
       image_url: reg.body.image_url
-    }).then(function(dbItems) {
+    }).then(function(dbCategories) {
       // `results` here would be the newly created items
-      res.json(dbItems)
+      res.json(dbCategories)
       // res.end();
     });
 
@@ -44,27 +44,27 @@ module.exports = function(app) {
 
 
   // DELETE route for deleting items
-  app.delete("/api/items/:id", function(req, res) {
-    db.Items.destroy({
+  app.delete("/api/categories/:id", function(req, res) {
+    db.Categories.destroy({
       where: {
         id: req.params.id
       }
     })
-    .then(function(dbItems) {
-      res.json(dbItems);
+    .then(function(dbCategories) {
+      res.json(dbCategories);
     });
   });
 
   // PUT route for updating items
-  app.put("/api/items", function(req, res) {
-    db.Items.update(req.body,
+  app.put("/api/categories", function(req, res) {
+    db.Categories.update(req.body,
       {
         where: {
           id: req.body.id
         }
       })
-    .then(function(dbItems) {
-      res.json(dbItems);
+    .then(function(dbCategories) {
+      res.json(dbCategories);
     });
   });
 };

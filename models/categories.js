@@ -8,7 +8,7 @@ module.exports = function(sequelize, DataTypes) {
 // var sequelize = require("../config/config.js");
 
 // Creates a  model that matches up with DB
-var Items = sequelize.define("Items", {
+var Categories = sequelize.define("Categories", {
   top: {
     type: DataTypes.STRING,
   },
@@ -70,16 +70,17 @@ var Items = sequelize.define("Items", {
 // // Makes the Model available for other files (will also create a table)
 // module.exports = Items;
 
-  Items.associate = function(models) {
+  Categories.associate = function(models) {
     // Associating Profile with Items
     // When Profile is deleted, also delete any associated Items
-    Items.belongsTo(models.Profile, {
+  Categories.associate = function(models) {
+    .belongsTo(models.Profile, {
       foreignKey: {
         allowNull: false
       }
     });
   };
 
-  return Items;
+  return Categories;
 
 };

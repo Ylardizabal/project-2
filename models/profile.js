@@ -49,7 +49,7 @@ var Profile = sequelize.define("Profile", {
   Profile.associate = function(models) {
     // Associating Profile with Items
     // When Profile is deleted, also delete any associated Items
-    Profile.hasMany(models.Items, {
+    Profile.hasMany(models.Categories, {
       onDelete: "cascade"
     });
 

@@ -27,7 +27,7 @@ app.use(express.static("public"));
 // Routes
 // =============================================================
 require("./routes/api-profile-routes.js")(app);
-require("./routes/api-items-routes.js")(app);
+require("./routes/api-categories-routes.js")(app);
 // require("./routes/api-wishlist-routes.js")(app);
 require("./routes/html-routes.js")(app);
 

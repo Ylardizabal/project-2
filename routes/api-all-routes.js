@@ -14,40 +14,40 @@ module.exports = function(app) {
 
   // GET route for getting all of the items
 
-  app.get("/api/items", function(req, res) {
+  app.get("/api/categories", function(req, res) {
     var query = {};
     if (req.query.profile.id) {
       query.ProfileId = req.query.profile.id;
     }
     db.items.findAll({
       where: query
-    }).then(function(dbItems) {
-      res.json(dbItems);
+    }).then(function(dbCategories) {
+      res.json(dbCategories);
     });
   });
 
 
   // Get route for returning posts of a specific item type
- app.get("/api/items", function(req, res) {
+ app.get("/api/Categories", function(req, res) {
     var query = {};
-    if (req.query.items.*) {
-      query.ProfileId = req.query.items.*;
+    if (req.query.Categories.*) {
+      query.ProfileId = req.query.Categories.*;
     }
-    db.items.findAll({
+    db.Categories.findAll({
       where: query
     }).then(function(dbItems) {
-      res.json(dbItems);
+      res.json(dbCategories);
     });
   });
 
   // Get route for retrieving a single item
-  app.get("/api/items/:id", function(req, res) {
-    db.Items.findOne({
+  app.get("/api/Categories/:id", function(req, res) {
+    db.Categories.findOne({
       where: {
         id: req.params.id
       }
     })
-    .then(function(dbItems) {
-      res.json(dbItems);
+    .then(function(dbCategories) {
+      res.json(dbCategories);
     });
   });
